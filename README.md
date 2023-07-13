@@ -1,132 +1,169 @@
+# kube Theme for Hugo
 
-<h1 align=center>Dot Hugo </h1>
-<p align=center>Dot is a simple Hugo documentation theme with a professional outlook. </p>
-<h2 align="center"><a target="_blank" href="https://demo.gethugothemes.com/dot" rel="nofollow">👀Demo</a> | <a  target="_blank" href="https://pagespeed.web.dev/report?url=https%3A%2F%2Fdemo.gethugothemes.com%2Fdot%2Fsite%2F&form_factor=desktop">Page Speed (96%)🚀</a> </h2>
+`kube` Kube is a professional and a responsive Hugo theme for developers and designers that offers a documentation section mixed with a landing page and a blog.
 
+I create this theme based on [Kube Framework](https://kube7.imperavi.com/).
 
-<p align=center>
-  <a href="https://github.com/gohugoio/hugo/releases/tag/v0.64.0" alt="Contributors">
-    <img src="https://img.shields.io/static/v1?label=min-HUGO-version&message=0.64.0&color=f00&logo=hugo" />
-  </a>
+![kube hugo landingPage](https://cldup.com/RjWtdJZNae.png)
 
-  <a href="https://github.com/themefisher/dot-hugo/blob/master/LICENSE">
-    <img src="https://img.shields.io/github/license/themefisher/dot-hugo" alt="license"></a>
+# Demo
 
-  <img src="https://img.shields.io/github/languages/code-size/themefisher/dot-hugo" alt="code size">
+To see this theme in action, check out [kube project](http://kube.elemnts.net) which is rendered with this theme and some content for documentation and blog posts.
 
-  <a href="https://github.com/themefisher/dot-hugo/graphs/contributors">
-    <img src="https://img.shields.io/github/contributors/themefisher/dot-hugo" alt="contributors"></a>
+## Features
 
-  <a href="https://twitter.com/intent/follow?screen_name=gethugothemes">
-    <img src="https://img.shields.io/twitter/follow/gethugothemes?style=social&logo=twitter"
-      alt="follow on Twitter"></a>
-</p>
+- Mobile-first Design : Every element in kube is mobile-first and fully embraces latest and greatest tech.
+- Responsive Design : Optimized for mobile, tablet, desktop
+- Horizontal Rhythm : Like Kube framework this theme is based on a 4px vertical grid.
+- Typography : beautiful typographie choice
+- Google Analytics : Google Analytics using the internal async template
+- Disqus Commenting : Post comments with Disqus using the internal template
+- OpenGraph support : SEO-optimized using OpenGraph
+- Schema Structured Data : Schema Structured Data and Meta tags
+- Paginated Lists : Simple list pagination with page indicators
+- Reading Time : Post reading time and update notice set user expectations
+- Meta data for all blog article : Rich post data including links to category and tag taxonomy listings, author and word count
+- Related Posts : Related Content for increased page views and reader loyalty
+- Block Templates : Block Templates for foolproof layout extensions
+- Table of Contents : Accessible Table of Contents for documentation
+- SEO Site Verification : Site verification with Google, Bing Alexa and Yandex
+- 404 page : 404 page with animated background
 
----
+## Installation
 
-<p align="center">
-  
-<img src="https://user-images.githubusercontent.com/37659754/54081086-cc7ce200-4328-11e9-9f7d-74d9b32fa68c.gif" alt="screenshot" width="100%">
-</p>
+Inside the folder of your Hugo site run:
 
----
+    $ mkdir themes
+    $ cd themes
+    $ git clone https://github.com/jeblister/kube.git
 
-## 🔑Key Features
-- 📄 8+ Pre-designed pages
-- 🈳Multiple language support (Fr, En)
-- 〽️Google analytics  support
-- 📂CSS and Js bundle with hugo pipe
-- 👉Color and fonts variable in config file
-- 📨Contact form Support
-- ⚡Google page speed optimized ( 96% )
-- 👉Open graph meta tag
-- 👉Twitter card meta tag
+For more information read the official [setup guide](//gohugo.io/overview/installing/) for Hugo.
 
-## 📄 8+ Pre-Designed Pages
+Copy custom archetypes to your site:
 
-- 🏠Home
-- 👤About
-- 📞Contact
-- ❔Faq Page
-- 🌟Features Page
-- 🔧Installation Page
-- 💰Pricing Page
-- ❔404 Page
-
-## 🛠️Local development
-
-```bash
-# clone the repository
-git clone git@github.com:themefisher/dot-hugo.git
-
-# cd in the project directory
-$ cd dot-hugo/exampleSite/
-
-# Start local dev server
-$ hugo server --themesDir ../..
+```shell
+cp themes/kube/archetypes/* archetypes
 ```
 
-Or Check out [Full Documentation](https://docs.gethugothemes.com/dot/?ref=github).
+Next, take a look in the `exampleSite` folder at. This directory contains an example config file and the content for the demo. It serves as an example setup for your blog.
 
+Copy at least the `config.toml` in the root directory of your website. Overwrite the existing config file if necessary.
 
-## 🔧Deployment and hosting
+Hugo includes a development server, so you can view your changes as you go :
 
-[![Deploy to
-Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/themefisher/dot-hugo)
+```sh
+hugo server -w
+```
 
-Follow the steps.
+Now you can go to [localhost:1313](http://localhost:1313) and the `kube`
+theme should be visible.
 
-<!-- reporting issue -->
-## 🐞Reporting Issues
+## Getting Started
 
-We use GitHub Issues as the official bug tracker for the dot Template. Please Search [existing
-issues](https://github.com/themefisher/dot-hugo/issues). Someone may have already reported the same problem.
-If your problem or idea has not been addressed yet, feel free to [open a new
-issue](https://github.com/themefisher/dot-hugo/issues).
+There are a few concepts this theme employs to make a personal documentation site. It's important to read this as you may not see what you expect upon launching. It assumes you want to call your documentation posts `docs` and organizes them as such. For example, creating a new docs with Hugo would require you typing:
 
-## 📱Submit Your Website To Our Showcase
+```
+  $ hugo new --kind docs docs/my-new-doc.md
 
-Are you using Dot Hugo theme? Submit it to our [showcase](https://gethugothemes.com/showcase). 
+```
 
-Our showcase aims to demonstrate to the world what amazing websites people like you have created utilizing our Hugo themes and to show that Hugo has tremendous capabilities as a Static Site Generator. 
+It also assumes you want to display three types of content `docs` and `blog` and some pages : the `faq`, `company` and `sign-in` pages and display links to this pages in the menu. This guide will take you through the steps to configure your documentation site to use the theme.
 
-View all the websites powered by Dot Hugo from [here](https://gethugothemes.com/showcase?theme=dot). 
+### Configuring you website
 
-[Submit](https://gethugothemes.com/showcase?submit=show) your Dot Hugo powered website.
+#### Where should blog post markdown files be stored?
 
+The theme works with other content types, but docs pages work best when grouped under `docs`. When using the `docs` content type you'll have a customized list page sorted by `weight` and the default list page for all documentation. Here's an example:
 
-<!-- licence -->
-## 📝License
+![Custom List docs Page](https://cldup.com/8k1nU8TLuU.png)
 
-Copyright &copy; Designed by [Themefisher](https://themefisher.com) & Developed by
-[Gethugothemes](https://gethugothemes.com)
+#### Defining yourself as the Author
 
-**Code License:** Released under the [MIT](https://github.com/themefisher/dot-hugo/blob/master/LICENSE) license.
+In this case you would want to add `author = "your name"` variable like your name to your post's Front Matter.
 
-**Image license:** The images are only for demonstration purposes. They have their licenses. We don't have permission to
-share those images.
+#### Webmaster Verification
 
-<!-- resources -->
-## 👍Special Thanks
+Verify your site with several webmaster tools including Google, Bing, Alexa and Yandex. To allow verification of your site with any or all of these providers simply add the following to your `config.toml` and fill in their respective values:
 
-- [Bootstrap](https://getbootstrap.com)
-- [Jquery](https://jquery.com)
-- [Themify Icons](https://themify.me/themify-icons)
-- [Jquery Match Height](https://brm.io/jquery-match-height/)
-- [Google Fonts](https://fonts.google.com/)
-- [All Contributors](https://github.com/themefisher/dot-hugo/graphs/contributors)
+```toml
+[Params.seo.webmaster_verifications]
+  google = "" # Optional, Google verification code
+  bing = "" # Optional, Bing verification code
+  alexa = "" # Optional, Alexa verification code
+  yandex = "" # Optional, Yandex verification code
+```
 
-## 👨‍💻Hire Us
+### Index Blocking
 
-Besides developing unique, blazing-fast Hugo themes, we also provide customized services. We specialize in creating affordable, high-quality static websites based on Hugo.
+Just because a page appears in your `sitemap.xml` does not mean you want it to appear in a SERP. Examples of pages which will appear in your `sitemap.xml` that you typically do not want indexed by crawlers include error pages, search pages, legal pages, and pages that simply list summaries of other pages.
 
-If you need to customize the theme or complete website development from scratch, you can hire us.
-Check Our
-[Services](https://gethugothemes.com/services/?utm_source=dot_github&utm_medium=referral&utm_campaign=github_theme_readme)
+Though it's possible to block search indexing from a `robots.txt` file, kube makes it possible to block page indexing using Hugo configuration as well. By default the following page types will be blocked:
 
-<!-- premium themes -->
-## 💎Premium Themes By Us
+- Section Pages (e.g. Post listings)
+- Taxonomy Pages (e.g. Category and Tag listings)
+- Taxonomy Terms Pages (e.g. Pages listing taxonomies)
 
-| [![Mega-Bundle-HUGO](https://demo.gethugothemes.com/thumbnails/bundle.png?)](https://gethugothemes.com/bundle/?utm_source=dot_github&utm_medium=referral&utm_campaign=github_theme_readme) | [![Godocs](https://demo.gethugothemes.com/thumbnails/godocs.png)](https://gethugothemes.com/products/godocs/) | [![wishfund](https://demo.gethugothemes.com/thumbnails/academia.png)](https://gethugothemes.com/products/academia/) |
-|:---:|:---:|:---:|
-| **Get 55+ Premium Hugo Themes Bundle** | **Godocs** | **Academia** |
+To customize default blocking configure the `noindex_kinds` setting in the `[params]` section of your `config.toml`. For example, if you want to enable crawling for sections appearing in [Section Menu](#adding-a-section-menu) add the following to your configuration file:
+
+```
+[params]
+  noindex_kinds = [
+    "taxonomy",
+    "taxonomyTerm"
+  ]
+```
+
+To block individual pages from being indexed add `nofollow` to your page's front matter and set the value to `true`, like:
+
+```toml
+noindex = true
+```
+
+And, finally, if you're using Hugo `v0.18` or better, you can also add an `_index.md` file with the `noindex` front matter to control indexing for specific section list layouts:
+
+```shell
+├── content
+│   ├── modules
+│   │   ├── starry-night.md
+│   │   └── flying-toilets.md
+│   └── news
+│       ├── _index.md
+│       └── return-flying-toasters.md
+```
+
+To learn more about how crawlers use this feature read [block search indexing with meta tags](https://support.google.com/webmasters/answer/93710).
+
+### Custom CSS
+
+To add your own theme css or override existing CSS without having to change theme files do the following:
+
+1. Create a `style.css` in your site's `layouts/static/css directory` or use `custom.css` file in 'themes/kube/static/css/custom.css`
+1. Add link to this file in 'themes/kube/layouts/\_default/baseof.html'.
+
+Default `style block` :
+
+```html
+<!-- Your own theme here -->
+<link href="/css/custom.css" rel="stylesheet" type="text/css" />
+```
+
+## Contributing
+
+Did you find a bug or have an ideas for new features? Feel free to use the issue tracker to let me know or make a pull request.
+
+There's only one rule...there are no rules.
+
+## License
+
+MIT
+
+## Credits
+
+- [kube framework](https://kube7.imperavi.com/)
+- [after dark theme](https://github.com/comfusion/after-dark)
+
+## Contact
+
+This is the second theme I've made for Hugo, so I'm sure I've done some things wrong or assumed too much. If you have ideas or things that should be fixed, please let me know.
+
+- [Mohamed JEBLI](http://about.elemnts.net/) [@jebli_7](http://twitter.com/jebli_7)
